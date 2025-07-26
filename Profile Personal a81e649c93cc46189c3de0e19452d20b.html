@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Profile Personal</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a81e649c-93cc-4618-9c3d-e0e19452d20b" class="page sans"><header><img class="page-cover-image" src="IMG_1813.jpeg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="z6733838623248_b2187b297c44fba6bcce8471e466ecff.jpg"/></div><h1 class="page-title">Profile Personal</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-pink_background callout" style="white-space:pre-wrap;display:flex" id="9583ad70-fd76-4961-9cae-6746f4a0bcd6"><div style="font-size:1.5em"><span class="icon">🎨</span></div><div style="width:100%">Xin chào mọi người,<p id="eba850ac-8c31-4d1c-87df-69687d2afdc5" class="">Mình là Phong, một người trẻ đang trong hành trình trở thành chuyên gia trong mảng phần cứng &amp; giải pháp mạng . Với nền tảng vững chắc và kinh nghiệm đa dạng trong các vai trò như auditor nội bộ, presaler, và kiến trúc sư giải pháp (Solution Architect), mình cam kết mang đến những giải pháp công nghệ sáng tạo và hiệu quả nhất.</p><p id="9bcde865-bd63-4f61-965c-32712dc74b9e" class="">Mong được đồng hành cùng mọi người trong hành trình chinh phục những cơ hội công nghệ mới </p><p id="c8ae8891-eee2-4a65-ab80-045fba5a03d8" class="">
+</p></div></figure><p id="8868234a-475f-4f64-bf4d-d44176069687" class="">
+</p><p id="55c3bf5e-35f2-4c98-848c-75fc26d130a6" class="">
+</p><h1 id="12689734-2a6a-4766-ab79-072afcdfc429" class="">💼 Experience</h1><p id="87cc6ed7-c600-4556-90fb-9ac0ba259625" class=""><strong>Auditor, Resales, Solution Architect</strong></p><p id="7ededade-65df-4dd3-b5e3-88409dd8cec0" class=""><em>Công ty DNS Technology Investment Company Limited</em></p><p id="6053602d-1c05-4650-8167-5cda63be38e9" class=""><em>Tháng 7/2023 - Hiện tại</em></p><ul id="b24cb0ab-5046-4f3f-ba4b-c8aee953c823" class="bulleted-list"><li style="list-style-type:disc">Kiểm toán và đánh giá hệ thống CNTT.</li></ul><ul id="1a44ae1c-8fe1-4c88-81ee-793d759c2292" class="bulleted-list"><li style="list-style-type:disc">Phát triển cơ hội bán hàng và cung cấp giải pháp công nghệ.</li></ul><ul id="3627562b-d53f-4617-8fa8-37bd11c75270" class="bulleted-list"><li style="list-style-type:disc">Thiết kế và triển khai giải pháp công nghệ cho khách hàng.</li></ul><p id="8a7b7d39-a22c-4150-b490-3c227edebcf9" class=""><strong>IT Helpdesk</strong></p><p id="7315f05f-19af-45b3-81d8-320d4773ad60" class=""><em>Công ty CP Thương Mại Dịch Vụ Phong Vũ</em></p><p id="ab15daf6-8c00-4c7f-8c14-429acca2717a" class=""><em>Tháng 6/2022 - Tháng 6/2023</em></p><ul id="5566d9d1-9cc8-45f4-9191-19783b48d7dd" class="bulleted-list"><li style="list-style-type:disc">Hỗ trợ kỹ thuật và giải quyết vấn đề CNTT.</li></ul><ul id="e53965ae-bb08-42cb-b355-48e05dea552f" class="bulleted-list"><li style="list-style-type:disc">Quản lý yêu cầu hỗ trợ và bảo trì hệ thống.</li></ul><p id="63b746a6-ba65-40ae-bacf-02924d2dedde" class=""><strong>IT Helpdesk</strong></p><p id="779c98e2-31a8-4f48-ac7c-806507c7f03e" class=""><em>Công ty TNHH Piti</em></p><p id="59971727-bfe3-4969-9229-46d7662ab327" class=""><em>Tháng 2020 - Tháng 2021</em></p><ul id="e94699b2-77f4-4345-bb1b-237072fc2dfe" class="bulleted-list"><li style="list-style-type:disc">Cung cấp hỗ trợ kỹ thuật và khắc phục sự cố.</li></ul><ul id="53f23da9-9b78-4573-9720-9497d75a2fba" class="bulleted-list"><li style="list-style-type:disc">Xử lý yêu cầu hỗ trợ qua điện thoại và email.</li></ul><h1 id="abf5a0b9-b37e-469f-ad6f-8335e62bc5f0" class="">🎓 Education</h1><p id="37660372-fedc-4670-863c-84aa789a4ecd" class=""><strong>Cao Đẳng Công Nghệ Thủ Đức</strong> <em>2018 - 2020</em></p><p id="262095b1-55a3-4841-bc7b-0844badc4ea1" class=""><em>Chuyên ngành Truyền Thông Mạng Máy Tính</em></p><h1 id="29df9eba-b5ca-40b8-b8ec-a52d1cd3a2c8" class="">🚀 Projects</h1><p id="0050f43d-3b51-4819-8492-9bfa0394f68a" class=""><strong>Di Dời Hệ Thống Server cho Sở Tài Chính TP.HCM</strong></p><p id="23bd46db-35c4-409e-a866-cb7539457be0" class=""><em>2023</em></p><ul id="a9ac1fb6-367a-4d9a-87cc-f6f95f4bb7ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Mô tả</strong>: Chuyển giao và triển khai hệ thống server mới cho Sở Tài Chính TP.HCM, bao gồm việc di dời và cấu hình lại hệ thống.</li></ul><ul id="7a17b3c0-77a5-4969-bd8e-79e7a0e2cd92" class="bulleted-list"><li style="list-style-type:disc"><strong>Kết quả</strong>: Đảm bảo hệ thống hoạt động liên tục và ổn định, nâng cao hiệu quả quản lý và bảo mật dữ liệu.</li></ul><p id="609dfd02-860e-4cb4-8b03-29f83e48d3f2" class=""><strong>Triển Khai Hệ Thống Server cho VIFB</strong></p><p id="e3f4d01e-46ee-4665-9e4d-4a3d94e0087a" class=""><em>2023</em></p><ul id="17fe9c9e-3fc3-4856-aed2-59cb9caaed40" class="bulleted-list"><li style="list-style-type:disc"><strong>Mô tả</strong>: Cài đặt và cấu hình hệ thống server cho các cửa hàng  tại Việt Nam, nhằm hỗ trợ hoạt động và quản lý công nghệ của chuỗi cửa hàng.</li></ul><ul id="9f7cbe33-9a25-4682-ab3d-c77a70406ae4" class="bulleted-list"><li style="list-style-type:disc"><strong>Kết quả</strong>: Tăng cường hiệu suất và độ tin cậy của hệ thống công nghệ, hỗ trợ hoạt động kinh doanh.</li></ul><p id="87b9c122-c7c9-4150-80a7-03cc7ebd34f2" class=""><strong>Triển Khai ISO/IEC 20000:2018</strong></p><p id="7e9d99b6-005a-4e52-9396-16e6b47af79e" class=""><em>2024</em></p><ul id="86c36fb2-564d-4104-9748-6d39cbafda90" class="bulleted-list"><li style="list-style-type:disc"><strong>Mô tả</strong>: Triển khai tiêu chuẩn ISO/IEC 20000:2018 cho hệ thống quản lý dịch vụ CNTT, nhằm nâng cao chất lượng và hiệu quả quản lý dịch vụ.</li></ul><ul id="48009a15-db59-4a63-8aa0-1cb8547453a3" class="bulleted-list"><li style="list-style-type:disc"><strong>Kết quả</strong>: Đạt chứng nhận ISO/IEC 20000:2018, cải thiện quy trình dịch vụ và tăng cường sự hài lòng của khách hàng.</li></ul><h1 id="399e792f-8197-44ec-914f-c493e9f1ac85" class="">🔨 Skills</h1><ul id="c337c27c-869b-413a-bc68-81012d252484" class="bulleted-list"><li style="list-style-type:disc"><strong>Quản Lý Hệ Thống CNTT</strong>: Triển khai, cấu hình, và bảo trì server, mạng.</li></ul><ul id="db4afe77-e783-40e1-9c5f-238edeeae8dd" class="bulleted-list"><li style="list-style-type:disc"><strong>Hỗ Trợ Kỹ Thuật</strong>: Xử lý sự cố phần cứng, phần mềm; hỗ trợ từ xa và trực tiếp.</li></ul><ul id="c6bb3e50-93e5-46d9-a633-f85ff8e5b5e6" class="bulleted-list"><li style="list-style-type:disc"><strong>Kiểm Toán và Đánh Giá</strong>: Thực hiện kiểm toán nội bộ, cải thiện quy trình.</li></ul><ul id="0680e9d3-0c04-45bc-9d19-6e2ed7e1f3d7" class="bulleted-list"><li style="list-style-type:disc"><strong>Tư Vấn Giải Pháp</strong>: Phát triển và triển khai giải pháp công nghệ.</li></ul><ul id="c9ee5335-c03d-4706-9058-db0f1f2f89bb" class="bulleted-list"><li style="list-style-type:disc"><strong>Quản Lý Dự Án</strong>: Lên kế hoạch, triển khai, và quản lý dự án công nghệ.</li></ul><ul id="a4e9f698-18d1-4ace-83ad-6daffe7a8f6c" class="bulleted-list"><li style="list-style-type:disc"><strong>Giao Tiếp và Hợp Tác</strong>: Giao tiếp hiệu quả, làm việc nhóm.</li></ul><ul id="b843b3d0-3e9a-4868-ac35-5934fb67f51d" class="bulleted-list"><li style="list-style-type:disc"><strong>Cải Tiến Quy Trình</strong>: Đề xuất và thực hiện cải tiến quy trình.</li></ul><h1 id="81bad0ec-b620-4839-b7da-84baf57322a9" class="">  👌Certificates </h1><p id="7a734241-90f6-4484-b22e-d8875401e798" class="">Nếu bạn tò mò xem mình đã từng có các chứng chỉ gì vui lòng click vào đường link bên dưới nhé </p><figure id="886fa22b-0c26-45b2-82e0-66cd706d8b52"><div class="source"><a href="https://drive.google.com/drive/folders/1HsCi75pplYIzrraIff3Kg-3PGXUk_lh8?usp=sharing">Phongnn_cert</a></div></figure><h1 id="508e15f1-6834-4369-a34a-5e8341c488b9" class="">📬 Contact</h1><p id="202b2ecc-012d-4ad0-ac8e-56be4540205d" class="">Mọi thông tin vui lòng liên hệ qua:</p><ul id="75d82708-b2f8-44a6-8b96-01405d795d59" class="bulleted-list"><li style="list-style-type:disc">Telegram: <a href="https://t.me/phongnn2k">https://t.me/phongnn2k</a></li></ul><ul id="a4cb1d21-836c-4bc9-9808-1d030b83d201" class="bulleted-list"><li style="list-style-type:disc">Phone: không cho đâu khỏi xin =)))</li></ul><p id="c17edc23-01e0-4dac-b7d0-a501d3fd56e5" class="">Mình mong muốn áp dụng kinh nghiệm và kỹ năng của mình để hỗ trợ bạn đạt được các mục tiêu công nghệ. Rất mong được làm việc cùng bạn trong tương lai gần.</p><p id="27d757d9-c785-4dc7-9c8f-84af5f381667" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
